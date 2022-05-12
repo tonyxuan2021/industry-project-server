@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/tonyxuan2021/industry-project-server/issues"
   },
-  "homepage": "https://github.com/tonyxuan2021/industry-project-server#readme"
+  "homepage": "https://github.com/tonyxuan2021/industry-project-server#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  }
 }
