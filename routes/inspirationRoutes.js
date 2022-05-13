@@ -34,13 +34,14 @@ router.post('/inspiration', (req, res) => {
   const newImageCard = {
       id: uniqid(),
       image: "http://localhost:8080/img1.png",
-      name: req.body.name,
+      name: "Sarah Scout",
       likes: 0,
       views: 0,
       avatar: "http://localhost:8080/avatar1.png"
+      
   }
   //insert new image into arr of images 
-  cardsContent.push(newImageCard);
+  cardsContent.unshift(newImageCard);
   //write new dataArr to json file
   writeImage(cardsContent)
   //respond to client with new vid data
