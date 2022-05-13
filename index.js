@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const { red } = require('colors');
+//const { red } = require('colors');
 const InspirationRoute = require('./routes/inspirationRoutes')
 app.use(express.static('public'));
 
