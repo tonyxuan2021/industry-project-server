@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const fs = require('fs');
+const { red } = require('colors');
+const InspirationRoute = require('./routes/inspirationRoutes')
+app.use(express.static('public'));
+
 
 require('dotenv').config();
 const PORT = process.env.PORT || 8000
@@ -10,21 +13,26 @@ const PORT = process.env.PORT || 8000
 app.use(cors())
 app.use(express.json());
 
+
+
 // Function to read videos
-function readImages() {
-  const imagesFile = fs.readFileSync('./data/images.json');
-  const imagesData = JSON.parse(imagesFile);
-  return imagesData;
-}
+// function readImages() {
+//   const imagesFile = fs.readFileSync('./data/images.json');
+//   const imagesData = JSON.parse(imagesFile);
+//   return imagesData;
+// }
 
-app.get("/inspiration", (req, res) => {
-  // 1. Read the data (and parse it)
-  const imagesData = readImages();
+// app.get("/", (req, res) => {
+//   res.send("hello world")
+//   // 1. Read the data (and parse it)
+//   // const imagesData = readImages();
 
-  // 3. Respond with that data
-  res.json(imagesData);
+//   // 3. Respond with that data
+//   // res.json(imagesData);
 
-});
+// });
+
+app.use('/', InspirationRoute);
 
 
 app.listen(PORT, ()=> {
